@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: github-code-scanner-test
+  
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 0
+
+github:
+  api:
+    base-url: http://localhost:8089
+    token: test-token
+    timeout: 5
+    max-retry-attempts: 1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    com.github.scanner: DEBUG
+    org.springframework.web: DEBUG
